@@ -1,26 +1,123 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>عمرانكو برجر | المنيو</title>
+<meta name="description" content="عمرانكو برجر - نموذج منيو إلكترونية تجريبي">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Tahoma,sans-serif;background:#f7f4ef;color:#241b16}
+.hero{padding:34px 18px 28px;background:linear-gradient(135deg,#111,#7b1e1e);color:white;text-align:center}
+.logo{width:78px;height:78px;border-radius:50%;margin:auto;background:#f0b35b;color:#2a1710;display:grid;place-items:center;font-size:35px;font-weight:900}
+h1{margin:14px 0 6px;font-size:30px}
+.tag{opacity:.9;margin:0}
+.info{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:18px}
+.info span{background:#ffffff18;border:1px solid #ffffff30;border-radius:999px;padding:8px 12px;font-size:13px}
+.wrap{max-width:900px;margin:auto;padding:18px}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.btn{display:block;text-align:center;text-decoration:none;border-radius:12px;padding:13px;font-weight:bold;background:#241b16;color:white}
+.wa{background:#198754}
+.tabs{display:flex;gap:8px;overflow:auto;padding-bottom:12px}
+.tab{white-space:nowrap;border:0;border-radius:999px;padding:10px 16px;background:#e8dfd4;font-weight:bold;cursor:pointer}
+.tab.active{background:#b21f1f;color:#fff}
+.menu{display:grid;gap:12px}
+.item{background:#fff;border-radius:16px;padding:15px;display:flex;justify-content:space-between;gap:12px;box-shadow:0 4px 18px #0000000a;border:1px solid #eee5dc}
+.item h3{margin:0 0 6px}
+.item p{margin:0;color:#766a61;font-size:13px;line-height:1.6}
+.price{font-weight:900;color:#a51d1d;white-space:nowrap;font-size:18px}
+.footer{text-align:center;color:#847970;padding:28px 10px;font-size:13px}
+@media(max-width:520px){.actions{grid-template-columns:1fr}h1{font-size:26px}}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="logo">🍔</div>
+  <h1>عمرانكو برجر</h1>
+  <p class="tag">برجر وفرايد تشيكن 🍔🔥</p>
+  <div class="info">
+    <span>📍 المنصورة</span>
+    <span>🕐 11 صباحًا - 3 صباحًا</span>
+    <span>⭐ نموذج تجريبي</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="actions">
+    <a class="btn wa" href="https://wa.me/201555218182" target="_blank">💬 اطلب على واتساب</a>
+    <a class="btn" href="tel:+201555218182">📞 اتصل بنا</a>
+  </div>
+
+  <nav class="tabs">
     <button class="tab active" onclick="show('all',this)">الكل</button>
-    <button class="tab" onclick="show('meat',this)">مشويات</button>
-    <button class="tab" onclick="show('meal',this)">وجبات</button>
-    <button class="tab" onclick="show('drinks',this)">مشروبات</button>
+    <button class="tab" onclick="show('burger',this)">برجر</button>
+    <button class="tab" onclick="show('chicken',this)">فرايد تشيكن</button>
+    <button class="tab" onclick="show('sandwich',this)">ساندوتشات</button>
   </nav>
 
   <section class="menu" id="menu">
-    <article class="item" data-cat="meat"><div><h3>كفتة مشوية</h3><p>كفتة لحم مشوية مع سلطة وعيش بلدي.</p></div><div class="price">180 ج</div></article>
-    <article class="item" data-cat="meat"><div><h3>كباب لحم</h3><p>قطع لحم متبلة ومشوية على الفحم.</p></div><div class="price">240 ج</div></article>
-    <article class="item" data-cat="meal"><div><h3>وجبة ميكس جريل</h3><p>كباب + كفتة + شيش طاووق + أرز وسلطة.</p></div><div class="price">320 ج</div></article>
-    <article class="item" data-cat="meal"><div><h3>فراخ مشوية</h3><p>نصف فرخة مشوية مع أرز وسلطة.</p></div><div class="price">190 ج</div></article>
-    <article class="item" data-cat="drinks"><div><h3>بيبسي</h3><p>كانز ساقع.</p></div><div class="price">35 ج</div></article>
-    <article class="item" data-cat="drinks"><div><h3>مياه معدنية</h3><p>زجاجة مياه.</p></div><div class="price">15 ج</div></article>
+
+    <article class="item" data-cat="burger">
+      <div>
+        <h3>برجر كلاسيك</h3>
+        <p>برجر لحم مع الجبن والخضار والصوص.</p>
+      </div>
+      <div class="price">السعر</div>
+    </article>
+
+    <article class="item" data-cat="burger">
+      <div>
+        <h3>تشيز برجر</h3>
+        <p>برجر لحم مع شرائح الجبن والصوص الخاص.</p>
+      </div>
+      <div class="price">السعر</div>
+    </article>
+
+    <article class="item" data-cat="chicken">
+      <div>
+        <h3>فرايد تشيكن</h3>
+        <p>قطع فراخ مقرمشة بتتبيلة خاصة.</p>
+      </div>
+      <div class="price">السعر</div>
+    </article>
+
+    <article class="item" data-cat="chicken">
+      <div>
+        <h3>وجبة فرايد تشيكن</h3>
+        <p>وجبة فراخ مقرمشة مع البطاطس والصوص.</p>
+      </div>
+      <div class="price">السعر</div>
+    </article>
+
+    <article class="item" data-cat="sandwich">
+      <div>
+        <h3>ساندوتش دجاج</h3>
+        <p>ساندوتش دجاج مع الخضار والصوص.</p>
+      </div>
+      <div class="price">السعر</div>
+    </article>
+
   </section>
 
-  <div class="footer">© 2026 كبابجي البلد — نموذج تجريبي قابل للتخصيص لأي مطعم</div>
+  <div class="footer">
+    © 2026 عمرانكو برجر — نموذج تجريبي للعرض
+  </div>
+
 </main>
 
 <script>
 function show(cat,btn){
- document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active')); btn.classList.add('active');
- document.querySelectorAll('.item').forEach(x=>x.style.display=(cat==='all'||x.dataset.cat===cat)?'flex':'none');
+ document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+ btn.classList.add('active');
+
+ document.querySelectorAll('.item').forEach(x=>{
+   x.style.display=(cat==='all'||x.dataset.cat===cat)?'flex':'none';
+ });
 }
 </script>
+
 </body>
 </html>
