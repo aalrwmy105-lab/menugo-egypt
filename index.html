@@ -3,531 +3,195 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smash Spot | المنيو</title>
+<title>Tawriqa | المنيو</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-
+*{box-sizing:border-box}
 body{
-font-family:Arial,Tahoma,sans-serif;
-background:#f5f5f5;
-color:#171717;
+margin:0;
+font-family:Arial,sans-serif;
+background:#f7f7f7;
+color:#222
 }
-
-.hero{
-min-height:450px;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:30px 18px;
+header{
+background:#111;
 color:white;
-background:
-linear-gradient(rgba(0,0,0,.68),rgba(0,0,0,.68)),
-url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1400&q=85")
-center/cover;
+padding:35px 20px;
+text-align:center
 }
-
-.hero-content{max-width:700px}
-
-.logo{
-width:90px;
-height:90px;
-border-radius:25px;
-background:#ffb000;
-display:flex;
-align-items:center;
-justify-content:center;
-margin:0 auto 20px;
-font-size:48px;
-box-shadow:0 10px 30px rgba(0,0,0,.4);
-}
-
-.hero h1{
-font-size:48px;
-font-weight:900;
-margin-bottom:10px;
-}
-
-.hero p{
-font-size:19px;
-color:#eee;
-margin-bottom:25px;
-}
-
-.buttons{
-display:flex;
-justify-content:center;
-gap:12px;
-flex-wrap:wrap;
-}
-
+header h1{margin:0;font-size:38px}
+header p{margin:10px 0 20px;color:#ddd}
 .btn{
 display:inline-block;
-padding:14px 24px;
-border-radius:30px;
+padding:12px 20px;
+border-radius:25px;
 text-decoration:none;
-font-weight:bold;
+margin:5px;
+font-weight:bold
 }
-
-.whatsapp{background:#25d366;color:white}
-.call{background:#ffb000;color:#111}
+.whatsapp{background:#25D366;color:white}
+.phone{background:white;color:#111}
 
 .info{
-max-width:1000px;
-margin:-35px auto 30px;
-position:relative;
 background:white;
-border-radius:22px;
-padding:22px;
-display:flex;
-justify-content:space-around;
-gap:15px;
-flex-wrap:wrap;
-box-shadow:0 8px 30px rgba(0,0,0,.12);
-}
-
-.info-item{
+margin:15px;
+padding:18px;
+border-radius:15px;
 text-align:center;
-min-width:140px;
+box-shadow:0 2px 10px #ddd
 }
-
-.info-item span{
-display:block;
-font-size:26px;
-margin-bottom:7px;
-}
-
-.info-item small{
-display:block;
-color:#777;
-margin-top:5px;
-}
-
-.container{
-max-width:1100px;
-margin:auto;
-padding:10px 18px 60px;
-}
-
-.title{
-text-align:center;
-margin:35px 0 22px;
-}
-
-.title h2{font-size:32px}
-.title p{color:#777;margin-top:8px}
 
 .tabs{
 display:flex;
-justify-content:center;
-gap:10px;
-overflow-x:auto;
-padding-bottom:20px;
+gap:8px;
+overflow:auto;
+padding:15px;
+justify-content:center
 }
-
-.tab{
+.tabs button{
 border:0;
-background:white;
-padding:12px 20px;
-border-radius:25px;
-font-weight:bold;
-white-space:nowrap;
+background:#222;
+color:white;
+padding:10px 18px;
+border-radius:20px;
 cursor:pointer;
-box-shadow:0 3px 12px rgba(0,0,0,.08);
-}
-
-.tab.active{
-background:#ffb000;
-color:#111;
+white-space:nowrap
 }
 
 .menu{
 display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:22px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+padding:15px;
+max-width:1000px;
+margin:auto
 }
-
-.card{
+.item{
 background:white;
-border-radius:22px;
-overflow:hidden;
-box-shadow:0 6px 22px rgba(0,0,0,.08);
-transition:.25s;
+border-radius:15px;
+padding:20px;
+box-shadow:0 2px 10px #ddd
 }
-
-.card:hover{transform:translateY(-5px)}
-
-.card img{
-width:100%;
-height:230px;
-object-fit:cover;
-}
-
-.card-body{padding:18px}
-
-.card h3{
-font-size:21px;
-margin-bottom:8px;
-}
-
-.card p{
-color:#777;
-line-height:1.6;
-min-height:52px;
-}
-
-.bottom{
-margin-top:16px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
+.item h3{margin-top:0}
 .price{
-font-size:18px;
 font-weight:bold;
-color:#e28b00;
-}
-
-.order{
-background:#171717;
-color:white;
-text-decoration:none;
-padding:9px 15px;
-border-radius:20px;
-font-size:14px;
-}
-
-.contact{
-margin-top:55px;
-padding:38px 20px;
-border-radius:25px;
-background:#171717;
-color:white;
-text-align:center;
-}
-
-.contact h2{
-font-size:29px;
-margin-bottom:10px;
-}
-
-.contact p{
-color:#ccc;
-margin-bottom:22px;
+font-size:18px;
+margin-top:15px
 }
 
 footer{
 text-align:center;
 padding:25px;
-color:#888;
-font-size:14px;
+color:#777
 }
 
 .float{
 position:fixed;
 bottom:20px;
 left:20px;
-width:58px;
-height:58px;
+width:55px;
+height:55px;
 border-radius:50%;
-background:#25d366;
+background:#25D366;
 color:white;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:28px;
-text-decoration:none;
-box-shadow:0 5px 20px rgba(0,0,0,.25);
-z-index:20;
-}
-
-@media(max-width:700px){
-
-.hero h1{font-size:38px}
-.hero p{font-size:17px}
-
-.info{
-margin:-25px 12px 25px;
-}
-
-.menu{
-grid-template-columns:1fr;
-}
-
-.tabs{
-justify-content:flex-start;
-}
-
-.card img{
-height:230px;
-}
+font-size:25px;
+text-decoration:none
 }
 </style>
 </head>
 
 <body>
 
-<section class="hero">
+<header>
+<h1>Tawriqa</h1>
+<p>توريقة فرع المنصورة 🍽️</p>
 
-<div class="hero-content">
-
-<div class="logo">🍔</div>
-
-<h1>Smash Spot</h1>
-
-<p>Smash Burger بطعم مختلف 🔥</p>
-
-<div class="buttons">
-
-<a class="btn whatsapp" href="https://wa.me/201062384934">
-💬 اطلب على واتساب
+<a class="btn whatsapp"
+href="https://wa.me/201022595959">
+اطلب على واتساب
 </a>
 
-<a class="btn call" href="tel:+201062384934">
-📞 اتصل بنا
+<a class="btn phone"
+href="tel:01022595959">
+اتصل بنا
 </a>
-
-</div>
-
-</div>
-
-</section>
+</header>
 
 <div class="info">
-
-<div class="info-item">
-<span>📍</span>
-<b>المنصورة</b>
-<small>شارع المشاية</small>
-</div>
-
-<div class="info-item">
-<span>🕐</span>
-<b>11 صباحًا - 3 صباحًا</b>
-<small>يوميًا</small>
-</div>
-
-<div class="info-item">
-<span>🔥</span>
-<b>Smash Burger</b>
-<small>نموذج تجريبي</small>
-</div>
-
-</div>
-
-<div class="container">
-
-<div class="title">
-<h2>🍔 المنيو</h2>
-<p>اختار أكلك المفضل</p>
+📍 المنصورة - الدقهلية<br><br>
+🕐 يوميًا من 10 صباحًا حتى 2 صباحًا<br><br>
+🍽️ منيو Tawriqa
 </div>
 
 <div class="tabs">
-
-<button class="tab active" onclick="filterMenu('all',this)">
-الكل
-</button>
-
-<button class="tab" onclick="filterMenu('burger',this)">
-🍔 برجر
-</button>
-
-<button class="tab" onclick="filterMenu('chicken',this)">
-🍗 تشيكن
-</button>
-
-<button class="tab" onclick="filterMenu('fries',this)">
-🍟 إضافات
-</button>
-
+<button onclick="filterMenu('all')">الكل</button>
+<button onclick="filterMenu('meals')">🍽️ وجبات</button>
+<button onclick="filterMenu('sandwiches')">🥪 ساندوتشات</button>
+<button onclick="filterMenu('extras')">🍟 إضافات</button>
 </div>
 
 <div class="menu">
 
-<div class="card burger">
-
-<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-body">
-
-<h3>Classic Smash</h3>
-
-<p>
-سمّاش برجر مع الجبن والخضار والصوص الخاص.
-</p>
-
-<div class="bottom">
-<span class="price">السعر</span>
-<a class="order" href="https://wa.me/201062384934">اطلب</a>
+<div class="item meals">
+<h3>وجبة توريقة</h3>
+<p>وجبة مميزة من اختيار المطعم</p>
+<div class="price">السعر</div>
 </div>
 
-</div>
-</div>
-
-<div class="card burger">
-
-<img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-body">
-
-<h3>Double Smash</h3>
-
-<p>
-قطعتان من اللحم مع الجبن وصوص مميز.
-</p>
-
-<div class="bottom">
-<span class="price">السعر</span>
-<a class="order" href="https://wa.me/201062384934">اطلب</a>
+<div class="item meals">
+<h3>وجبة فردية</h3>
+<p>اختيار مناسب لوجبة فردية</p>
+<div class="price">السعر</div>
 </div>
 
-</div>
-</div>
-
-<div class="card chicken">
-
-<img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-body">
-
-<h3>Crispy Chicken</h3>
-
-<p>
-تشيكن مقرمش مع الخس والجبن والصوص.
-</p>
-
-<div class="bottom">
-<span class="price">السعر</span>
-<a class="order" href="https://wa.me/201062384934">اطلب</a>
+<div class="item sandwiches">
+<h3>ساندوتش توريقة</h3>
+<p>ساندوتش بطعم مميز</p>
+<div class="price">السعر</div>
 </div>
 
-</div>
-</div>
-
-<div class="card chicken">
-
-<img src="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-body">
-
-<h3>Chicken Box</h3>
-
-<p>
-وجبة تشيكن مع البطاطس والصوص.
-</p>
-
-<div class="bottom">
-<span class="price">السعر</span>
-<a class="order" href="https://wa.me/201062384934">اطلب</a>
+<div class="item sandwiches">
+<h3>ساندوتش خاص</h3>
+<p>اختيار من ساندوتشات المطعم</p>
+<div class="price">السعر</div>
 </div>
 
-</div>
-</div>
-
-<div class="card fries">
-
-<img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-body">
-
-<h3>Classic Fries</h3>
-
-<p>
-بطاطس مقرمشة تقدم مع الصوص الخاص.
-</p>
-
-<div class="bottom">
-<span class="price">السعر</span>
-<a class="order" href="https://wa.me/201062384934">اطلب</a>
+<div class="item extras">
+<h3>بطاطس</h3>
+<p>بطاطس مقرمشة</p>
+<div class="price">السعر</div>
 </div>
 
-</div>
-</div>
-
-<div class="card fries">
-
-<img src="https://images.unsplash.com/photo-1623238913973-21e45cced554?auto=format&fit=crop&w=900&q=85">
-
-<div class="card-body">
-
-<h3>Loaded Fries</h3>
-
-<p>
-بطاطس مع إضافات وصوصات مميزة.
-</p>
-
-<div class="bottom">
-<span class="price">السعر</span>
-<a class="order" href="https://wa.me/201062384934">اطلب</a>
-</div>
-
-</div>
-</div>
-
-</div>
-
-<div class="contact">
-
-<h2>جاهز تجرب Smash Spot؟ 🔥</h2>
-
-<p>
-اطلب الآن وتواصل معنا مباشرة
-</p>
-
-<div class="buttons">
-
-<a class="btn whatsapp" href="https://wa.me/201062384934">
-💬 واتساب
-</a>
-
-<a class="btn call" href="tel:+201062384934">
-📞 اتصال
-</a>
-
-</div>
-
+<div class="item extras">
+<h3>إضافات</h3>
+<p>إضافات وصوصات حسب الاختيار</p>
+<div class="price">السعر</div>
 </div>
 
 </div>
 
 <footer>
-© 2026 Smash Spot — نموذج تجريبي
+© 2026 Tawriqa — نموذج تجريبي
 </footer>
 
-<a class="float" href="https://wa.me/201062384934">
-💬
-</a>
+<a class="float" href="https://wa.me/201022595959">💬</a>
 
 <script>
+function filterMenu(category){
+const items=document.querySelectorAll('.item');
 
-function filterMenu(category,button){
-
-document.querySelectorAll('.tab').forEach(tab=>{
-tab.classList.remove('active');
+items.forEach(item=>{
+if(category==='all'){
+item.style.display='block';
+}else{
+item.style.display=item.classList.contains(category)
+?'block':'none';
+}
 });
-
-button.classList.add('active');
-
-document.querySelectorAll('.card').forEach(card=>{
-
-if(category === 'all'){
-card.style.display='block';
 }
-
-else if(card.classList.contains(category)){
-card.style.display='block';
-}
-
-else{
-card.style.display='none';
-}
-
-});
-
-}
-
 </script>
 
 </body>
