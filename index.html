@@ -1,241 +1,486 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>عمرانكو برجر | المنيو</title>
-<meta name="description" content="منيو إلكترونية تجريبية لعمرانكو برجر">
+
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
 body{
-margin:0;
-font-family:Arial,Tahoma,sans-serif;
-background:#f5f5f5;
-color:#222
+  font-family:Arial,Tahoma,sans-serif;
+  background:#f6f6f6;
+  color:#222;
 }
+
 .hero{
-padding:30px 18px;
-background:linear-gradient(135deg,#111,#8b1e1e);
-color:#fff;
-text-align:center
+  min-height:430px;
+  padding:35px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=85")
+    center/cover;
 }
+
+.hero-content{
+  max-width:700px;
+}
+
 .logo{
-width:82px;
-height:82px;
-border-radius:50%;
-margin:auto;
-background:#f5b642;
-display:grid;
-place-items:center;
-font-size:40px
+  width:85px;
+  height:85px;
+  margin:auto auto 20px;
+  border-radius:50%;
+  background:#ffb000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:45px;
+  box-shadow:0 8px 30px rgba(0,0,0,.4);
 }
-h1{margin:14px 0 5px;font-size:30px}
-.tag{margin:0;opacity:.9}
-.info{
-display:flex;
-justify-content:center;
-gap:8px;
-flex-wrap:wrap;
-margin-top:18px
+
+.hero h1{
+  font-size:46px;
+  margin-bottom:12px;
+  font-weight:900;
 }
-.info span{
-background:#ffffff18;
-border:1px solid #ffffff30;
-border-radius:30px;
-padding:8px 12px;
-font-size:13px
+
+.hero p{
+  font-size:20px;
+  color:#eee;
+  margin-bottom:25px;
 }
-.wrap{
-max-width:900px;
-margin:auto;
-padding:18px
+
+.buttons{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
 }
-.actions{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
-margin-bottom:18px
-}
+
 .btn{
-display:block;
-text-align:center;
-text-decoration:none;
-border-radius:12px;
-padding:14px;
-font-weight:bold;
-background:#222;
-color:#fff
+  text-decoration:none;
+  padding:14px 25px;
+  border-radius:30px;
+  font-weight:bold;
+  color:white;
+  display:inline-block;
 }
-.wa{background:#198754}
+
+.whatsapp{
+  background:#25d366;
+}
+
+.call{
+  background:#ffb000;
+  color:#111;
+}
+
+.info{
+  max-width:1000px;
+  margin:-35px auto 30px;
+  position:relative;
+  background:white;
+  border-radius:20px;
+  padding:20px;
+  display:flex;
+  justify-content:space-around;
+  gap:15px;
+  flex-wrap:wrap;
+  box-shadow:0 8px 30px rgba(0,0,0,.12);
+}
+
+.info-item{
+  text-align:center;
+  min-width:130px;
+}
+
+.info-item span{
+  display:block;
+  font-size:25px;
+  margin-bottom:7px;
+}
+
+.info-item small{
+  color:#777;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:10px 18px 60px;
+}
+
+.section-title{
+  text-align:center;
+  margin:35px 0 20px;
+}
+
+.section-title h2{
+  font-size:30px;
+}
+
+.section-title p{
+  color:#777;
+  margin-top:8px;
+}
+
 .tabs{
-display:flex;
-gap:8px;
-overflow:auto;
-padding-bottom:14px
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  padding:5px 0 18px;
+  justify-content:center;
 }
+
 .tab{
-white-space:nowrap;
-border:0;
-border-radius:999px;
-padding:10px 17px;
-background:#e3e3e3;
-font-weight:bold;
-cursor:pointer
+  border:0;
+  background:white;
+  padding:12px 20px;
+  border-radius:25px;
+  cursor:pointer;
+  font-weight:bold;
+  box-shadow:0 3px 12px rgba(0,0,0,.08);
+  white-space:nowrap;
 }
+
 .tab.active{
-background:#a91f1f;
-color:#fff
+  background:#ffb000;
+  color:#111;
 }
+
 .menu{
-display:grid;
-gap:14px
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
 }
-.item{
-background:#fff;
-border-radius:18px;
-overflow:hidden;
-display:flex;
-align-items:stretch;
-justify-content:space-between;
-box-shadow:0 5px 20px #00000010;
-border:1px solid #eee
+
+.card{
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+  transition:.25s;
 }
-.item img{
-width:125px;
-height:125px;
-object-fit:cover
+
+.card:hover{
+  transform:translateY(-5px);
 }
-.item-content{
-padding:14px;
-flex:1
+
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
 }
-.item h3{
-margin:0 0 7px;
-font-size:18px
+
+.card-body{
+  padding:18px;
 }
-.item p{
-margin:0 0 12px;
-color:#777;
-font-size:13px;
-line-height:1.6
+
+.card h3{
+  font-size:21px;
+  margin-bottom:8px;
 }
+
+.card p{
+  color:#777;
+  line-height:1.6;
+  min-height:50px;
+}
+
 .price{
-font-weight:900;
-color:#a51d1d;
-font-size:18px
+  margin-top:15px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
-.footer{
-text-align:center;
-color:#777;
-padding:30px 10px;
-font-size:13px
+
+.price span{
+  font-size:18px;
+  font-weight:bold;
+  color:#ff9700;
 }
-@media(max-width:520px){
-.actions{grid-template-columns:1fr}
-.item img{width:105px;height:115px}
-h1{font-size:26px}
+
+.order{
+  background:#111;
+  color:white;
+  padding:9px 15px;
+  border-radius:20px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.contact{
+  margin-top:50px;
+  padding:35px 20px;
+  border-radius:25px;
+  background:#171717;
+  color:white;
+  text-align:center;
+}
+
+.contact h2{
+  margin-bottom:10px;
+  font-size:28px;
+}
+
+.contact p{
+  color:#ccc;
+  margin-bottom:22px;
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  color:#888;
+  font-size:14px;
+}
+
+.float-whatsapp{
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#25d366;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  text-decoration:none;
+  box-shadow:0 5px 20px rgba(0,0,0,.25);
+  z-index:10;
+}
+
+@media(max-width:700px){
+  .hero{
+    min-height:430px;
+  }
+
+  .hero h1{
+    font-size:36px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
+  .info{
+    margin:-25px 12px 25px;
+  }
+
+  .menu{
+    grid-template-columns:1fr;
+  }
+
+  .card img{
+    height:230px;
+  }
+
+  .tabs{
+    justify-content:flex-start;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header class="hero">
-<div class="logo">🍔</div>
-<h1>عمرانكو برجر</h1>
-<p class="tag">برجر وفرايد تشيكن 🔥</p>
+<section class="hero">
+  <div class="hero-content">
 
-<div class="info">
-<span>📍 المنصورة</span>
-<span>🕐 11 صباحًا - 3 صباحًا</span>
-<span>⭐ نموذج تجريبي</span>
-</div>
-</header>
+    <div class="logo">🍔</div>
 
-<main class="wrap">
+    <h1>عمرانكو برجر</h1>
 
-<div class="actions">
-<a class="btn wa" href="https://wa.me/201555218182" target="_blank">
-💬 واتساب
-</a>
+    <p>برجر وفرايد تشيكن بطعم يخليك ترجع تاني 🔥</p>
 
-<a class="btn" href="tel:+201555218182">
-📞 اتصل بنا
-</a>
-</div>
+    <div class="buttons">
+      <a class="btn whatsapp" href="https://wa.me/201555218182">
+        💬 اطلب على واتساب
+      </a>
 
-<nav class="tabs">
-<button class="tab active" onclick="show('all',this)">الكل</button>
-<button class="tab" onclick="show('burger',this)">🍔 برجر</button>
-<button class="tab" onclick="show('chicken',this)">🍗 فرايد تشيكن</button>
-<button class="tab" onclick="show('sandwich',this)">🥪 ساندوتشات</button>
-</nav>
+      <a class="btn call" href="tel:+201555218182">
+        📞 اتصل بنا
+      </a>
+    </div>
 
-<section class="menu">
-
-<article class="item" data-cat="burger">
-<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80">
-<div class="item-content">
-<h3>برجر كلاسيك</h3>
-<p>برجر لحم مع الجبن والخضار والصوص الخاص.</p>
-<div class="price">السعر</div>
-</div>
-</article>
-
-<article class="item" data-cat="burger">
-<img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=400&q=80">
-<div class="item-content">
-<h3>تشيز برجر</h3>
-<p>برجر لحم مع شرائح الجبن وصوص مميز.</p>
-<div class="price">السعر</div>
-</div>
-</article>
-
-<article class="item" data-cat="chicken">
-<img src="https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=400&q=80">
-<div class="item-content">
-<h3>فرايد تشيكن</h3>
-<p>قطع دجاج مقرمشة بتتبيلة شهية.</p>
-<div class="price">السعر</div>
-</div>
-</article>
-
-<article class="item" data-cat="chicken">
-<img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=400&q=80">
-<div class="item-content">
-<h3>وجبة فرايد تشيكن</h3>
-<p>دجاج مقرمش مع بطاطس وصوص.</p>
-<div class="price">السعر</div>
-</div>
-</article>
-
-<article class="item" data-cat="sandwich">
-<img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=400&q=80">
-<div class="item-content">
-<h3>ساندوتش دجاج</h3>
-<p>ساندوتش دجاج مع الخضار والصوص.</p>
-<div class="price">السعر</div>
-</div>
-</article>
-
+  </div>
 </section>
 
-<div class="footer">
-© 2026 — نموذج تجريبي قابل للتخصيص للمطاعم
+<div class="info">
+
+  <div class="info-item">
+    <span>📍</span>
+    <b>المنصورة</b>
+    <small>فروع متعددة</small>
+  </div>
+
+  <div class="info-item">
+    <span>🕐</span>
+    <b>11 صباحًا - 3 صباحًا</b>
+    <small>يوميًا</small>
+  </div>
+
+  <div class="info-item">
+    <span>🔥</span>
+    <b>برجر وفرايد</b>
+    <small>وجبات وسندوتشات</small>
+  </div>
+
 </div>
 
-</main>
+<div class="container">
+
+  <div class="section-title">
+    <h2>🍽️ المنيو</h2>
+    <p>اختار القسم وشوف الأصناف</p>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="filterMenu('all',this)">الكل</button>
+    <button class="tab" onclick="filterMenu('burger',this)">🍔 برجر</button>
+    <button class="tab" onclick="filterMenu('chicken',this)">🍗 فرايد تشيكن</button>
+    <button class="tab" onclick="filterMenu('sandwich',this)">🥪 ساندوتشات</button>
+  </div>
+
+  <div class="menu">
+
+    <div class="card burger">
+      <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85">
+      <div class="card-body">
+        <h3>Classic Burger</h3>
+        <p>برجر لحم مع الجبن والخضار والصوص الخاص.</p>
+        <div class="price">
+          <span>السعر</span>
+          <a class="order" href="https://wa.me/201555218182">اطلب الآن</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card burger">
+      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=85">
+      <div class="card-body">
+        <h3>Double Burger</h3>
+        <p>قطعتان من البرجر مع الجبن والصوص المميز.</p>
+        <div class="price">
+          <span>السعر</span>
+          <a class="order" href="https://wa.me/201555218182">اطلب الآن</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card chicken">
+      <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=900&q=85">
+      <div class="card-body">
+        <h3>Crispy Chicken</h3>
+        <p>قطع فرايد تشيكن مقرمشة مع صوص خاص.</p>
+        <div class="price">
+          <span>السعر</span>
+          <a class="order" href="https://wa.me/201555218182">اطلب الآن</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card chicken">
+      <img src="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=900&q=85">
+      <div class="card-body">
+        <h3>Chicken Meal</h3>
+        <p>وجبة دجاج مقرمش مع البطاطس والصوص.</p>
+        <div class="price">
+          <span>السعر</span>
+          <a class="order" href="https://wa.me/201555218182">اطلب الآن</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card sandwich">
+      <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=85">
+      <div class="card-body">
+        <h3>Chicken Sandwich</h3>
+        <p>ساندوتش دجاج مع الخس والجبن والصوص.</p>
+        <div class="price">
+          <span>السعر</span>
+          <a class="order" href="https://wa.me/201555218182">اطلب الآن</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card sandwich">
+      <img src="https://images.unsplash.com/photo-1550507992-eb63ffee0847?auto=format&fit=crop&w=900&q=85">
+      <div class="card-body">
+        <h3>Special Sandwich</h3>
+        <p>ساندوتش مميز بمكونات وصوص خاص.</p>
+        <div class="price">
+          <span>السعر</span>
+          <a class="order" href="https://wa.me/201555218182">اطلب الآن</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="contact">
+    <h2>جاهز تطلب؟ 🔥</h2>
+    <p>تواصل معنا الآن واستمتع بطعم عمرانكو</p>
+
+    <div class="buttons">
+      <a class="btn whatsapp" href="https://wa.me/201555218182">
+        💬 واتساب
+      </a>
+
+      <a class="btn call" href="tel:+201555218182">
+        📞 اتصال
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 عمرانكو برجر — نموذج تجريبي
+</footer>
+
+<a class="float-whatsapp" href="https://wa.me/201555218182">
+  💬
+</a>
 
 <script>
-function show(cat,btn){
-document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
-btn.classList.add('active');
+function filterMenu(category,button){
 
-document.querySelectorAll('.item').forEach(x=>{
-x.style.display=(cat==='all'||x.dataset.cat===cat)?'flex':'none';
-});
+  document.querySelectorAll('.tab').forEach(tab=>{
+    tab.classList.remove('active');
+  });
+
+  button.classList.add('active');
+
+  document.querySelectorAll('.card').forEach(card=>{
+
+    if(category === 'all'){
+      card.style.display = 'block';
+    }
+    else if(card.classList.contains(category)){
+      card.style.display = 'block';
+    }
+    else{
+      card.style.display = 'none';
+    }
+
+  });
 }
 </script>
 
 </body>
-</html>
+                              </html>
